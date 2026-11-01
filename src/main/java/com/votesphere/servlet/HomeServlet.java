@@ -3,7 +3,6 @@ package com.votesphere.servlet;
 import com.votesphere.dao.PollDAO;
 import com.votesphere.dao.UserDAO;
 import com.votesphere.dao.VoteDAO;
-import com.votesphere.model.User;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -11,6 +10,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
+import java.sql.SQLException;
 
 @WebServlet("")
 public class HomeServlet extends HttpServlet {
@@ -27,7 +27,7 @@ public class HomeServlet extends HttpServlet {
             request.setAttribute("voters", userDAO.countVoters());
             request.setAttribute("votes", voteDAO.count());
             request.getRequestDispatcher("/index.jsp").forward(request, response);
-        } catch (Exception e) {
+        } catch (SQLException e) {
             throw new ServletException("Unable to load the home page.", e);
         }
     }
