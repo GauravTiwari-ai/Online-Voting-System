@@ -1,0 +1,3 @@
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Server error · VoteSphere</title><link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/style.css"></head>
+<body><%@ include file="/WEB-INF/views/nav.jspf" %><main class="container page-shell"><div class="empty-state"><span class="empty-icon">!</span><h1>Something went wrong</h1><p>Please try again. If the problem continues, contact the site administrator.</p><a class="button button-primary" href="${pageContext.request.contextPath}/">Go home</a></div></main></body></html>

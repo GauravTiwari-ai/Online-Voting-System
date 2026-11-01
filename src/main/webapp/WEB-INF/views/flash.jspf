@@ -1,0 +1,10 @@
+<%@ page pageEncoding="UTF-8" %>
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>
+<c:if test="${not empty sessionScope.flash}">
+    <div class="notice notice-success" role="status">${sessionScope.flash}</div>
+    <c:remove var="flash" scope="session" />
+</c:if>
+<c:if test="${not empty sessionScope.flashError}">
+    <div class="notice notice-error" role="alert">${sessionScope.flashError}</div>
+    <c:remove var="flashError" scope="session" />
+</c:if>
